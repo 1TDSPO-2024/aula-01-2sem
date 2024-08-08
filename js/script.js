@@ -21,3 +21,34 @@ console.log("=================LOOP FOR EACH");
 //     console.log(indice, f);
 // });
 frutas.forEach((f, indice, array) => console.log(array[indice]));
+
+//RECUPERANDO A LISTA UL
+let lista = document.getElementById("lista");
+
+//BOTÃP DE ADICIONAR FRUTA AO INICIO DA LISTA.
+document.getElementById("btnAddInicio").addEventListener("click", () => {
+    let valorDigitadoNoCampo = document.getElementById("idFruta").value;
+    frutas.push(valorDigitadoNoCampo);
+    renderizaLista();
+});
+
+
+//BOTÃO DE ADICIONAR FRUTA AO FINAL DA LISTA.
+document.getElementById("btnAddFinal").addEventListener("click", () => {
+    let valorDigitadoNoCampo = document.getElementById("idFruta").value;
+    frutas.push(valorDigitadoNoCampo);
+    renderizaLista();
+});
+
+function renderizaLista() {
+    lista.innerHTML = "";
+    frutas.forEach(fruta => {
+        //CRIANDO ELEMENTOS LI PARA INSERIR NA LISTA 
+        let elementoLi = document.createElement("li");
+        elementoLi.textContent = fruta;
+        lista.appendChild(elementoLi);
+    });
+
+}
+
+renderizaLista();
