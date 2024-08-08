@@ -27,3 +27,26 @@ console.log("--------------FOR EACH--------------");
 frutas.forEach(function (f, indice, array) {
     console.log(indice, f);
 });
+
+//Recuperando a lista UL
+let lista = document.getElementById("lista");
+
+
+//Botão de adicionar fruta ao final da lista
+document.getElementById("btnAdd").addEventListener("click", () => {
+    let frutaAdicionada = document.getElementById("idFruta").value;
+    frutas.push(frutaAdicionada);
+    renderizaLista();
+})
+
+function renderizaLista() {
+    lista.innerHTML = "";
+    frutas.forEach(fruta => {
+        //Criando elementos LI para incluir na lista
+        let elementoLi = document.createElement("li");
+        elementoLi.textContent = fruta;
+        lista.appendChild(elementoLi);
+    });
+}
+
+renderizaLista();
