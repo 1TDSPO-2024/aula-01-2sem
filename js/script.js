@@ -37,19 +37,19 @@ let lista = document.getElementById("lista");
 document.getElementById("btnAddInicio").addEventListener("click",()=>{
     let valorDigitadoNoCampo = document.getElementById("idFruta").value;
     frutas.unshift(valorDigitadoNoCampo);
-    renderizaLista()
+    renderizaLista();
 });
 
 //Botão de ordenar a lista
 document.getElementById("btnOrdem").addEventListener("click",()=>{
     frutas.sort();
-    renderizaLista()
+    renderizaLista();
 });
 
 //Botão de reverter a lisa
 document.getElementById("btnReverse").addEventListener("click",()=>{
     frutas.reverse();
-    renderizaLista()
+    renderizaLista();
 });
 
 
@@ -57,7 +57,7 @@ document.getElementById("btnReverse").addEventListener("click",()=>{
 document.getElementById("btnAddFinal").addEventListener("click",()=>{
     let valorDigitadoNoCampo = document.getElementById("idFruta").value;
     frutas.push(valorDigitadoNoCampo);
-    renderizaLista()
+    renderizaLista();
 });
 
 function renderizaLista(){
