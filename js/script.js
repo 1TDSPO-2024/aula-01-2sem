@@ -26,3 +26,35 @@ console.log("===================LOOPS FOR EACH");
 // });
 
 frutas.forEach((fruta, indice, array) => console.log(array[indice]))
+
+
+let lista = document.getElementById("lista");
+//Criando elementos Li para inserir na lista
+let elementoLi = document.createElement("li");
+elementoLi.textContent = "PÂo";
+lista.appendChild(elementoLi);
+
+frutas.forEach(fruta=>{
+    //Criando elementos Li para inserir na lista
+let elementoLi = document.createElement("li");
+elementoLi.textContent = fruta;
+lista.appendChild(elementoLi);
+});
+
+document.getElementById("btnAdd").addEventListener("click", () =>{
+    let valorDigitadoNoCampo = document.getElementById("fruta").value;
+    frutas.push(valorDigitadoNoCampo);
+    rederizaLista();
+});
+
+function rederizaLista(){
+    lista.innerHTML = "";
+    frutas.forEach(fruta=>{
+        //Criando elementos Li para inserir na lista
+    let elementoLi = document.createElement("li");
+    elementoLi.textContent = fruta;
+    lista.appendChild(elementoLi);
+    });
+}
+
+rederizaLista();
