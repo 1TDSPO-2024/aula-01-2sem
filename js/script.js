@@ -7,7 +7,7 @@ console.table(frutas)
 
 //Percorrer arrays com loop for
 for (let x = 0; x < frutas.length; x++) {
-    const element = array[x];
+    const element = frutas[x];
     console.log(frutas[x]);
 }
 
@@ -27,4 +27,27 @@ for (let i in frutas) {
 // });
 
 //for each com arrow function
-frutas.forEach((f, i, array) => console.log(array[indice]));
+frutas.forEach((f, i, array) => console.log(array[i]));
+
+//Recuperando a lista
+let lista = document.getElementById("lista");
+
+
+//Botão de adicionar fruta ao final da lista
+document.getElementById("btnAdd").addEventListener("click", () => {
+    let valor = document.getElementById("idFruta").value;
+    frutas.push(valor);
+    renderizaLista();
+})
+
+function renderizaLista() {
+    lista.innerHTML = "";
+    frutas.forEach(fruta => {
+        //Criando elementos li para inserir na lista
+        let elementoLi = document.createElement("li");
+        elementoLi.textContent = fruta;
+        lista.appendChild(elementoLi);
+    });
+}
+
+renderizaLista();
