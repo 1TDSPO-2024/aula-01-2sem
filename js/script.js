@@ -27,4 +27,49 @@ frutas.forEach(function (f, indice, array) {
     console.log(indice);
 }
 );
-frutas.forEach((f, indice, array) => console.log(array[indice]));
+//frutas.forEach((f, indice, array) => console.log(array[indice]));
+
+//Recuperando a Lista UL
+let lista = document.getElementById("lista");
+//Criando elementos LI para inserir na lista
+let elementosLi = document.createElement("li");
+elementoLi = textContent = "Jaca";
+
+lista.appendChild(elementoLi);
+
+frutas.forEach(fruta => {
+    let elementosLi = document.createElement("li");
+    elementoLi = textContent = "fruta";
+    lista.appendChild(elementoLi);
+});
+
+//Botao para adicionar ao inicio da lista
+document.getElementById("btnAddFinal").addEventListener("click", () => {
+    let valorDigitadoCampo = document.getElementById{ "idFruta"}.value;
+    fruta.push("NOVA FRUTA");
+    renderizandoLista();
+});
+
+
+
+//Botao para adicionar ao final da lista
+document.getElementById("btnAddFinal").addEventListener("click", () => {
+    let valorDigitadoCampo = document.getElementById{ "idFruta"}.value;
+    fruta.push("NOVA FRUTA");
+    frutas.unshift[valor]
+    renderizandoLista();
+});
+
+//Botao para adicionar em ordem
+
+//Botao para reverso
+
+function renderizandoLista() {
+    lista.innerHTML = "";
+    frutas.forEach(fruta => {
+        let elementosLi = document.createElement("li");
+        elementoLi = textContent = "fruta";
+        lista.appendChild(elementoLi);
+
+    })
+}
