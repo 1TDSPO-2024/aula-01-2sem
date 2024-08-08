@@ -1,6 +1,6 @@
 // Declarando um Array de frutas
 
-const frutas = [
+let frutas = [
     'Maçã',
     'Banana',
     'Limão',
@@ -25,3 +25,30 @@ for (const idx in frutas) {
 
 // Loop ForEach
 frutas.forEach(fruta => console.log(fruta));
+
+// Manipulando o DOM
+const ulElem = document.querySelector('#lista');
+updateFrutas();
+// Botão para adicionar frutas
+const btnAddFruta = document.querySelector('#addFruta');
+const iptFruta = document.querySelector('#iptFruta');
+
+btnAddFruta.addEventListener('click', addFruta);
+
+function addFruta(e) {
+    e.preventDefault();
+    frutas.push(iptFruta.value);
+    updateFrutas();
+    iptFruta.value = '';
+    iptFruta.focus();
+}
+
+function updateFrutas() {
+    ulElem.innerHTML = '';
+
+    frutas.forEach(fruta => {
+        const liElem = document.createElement('li');
+        liElem.textContent = fruta;
+        ulElem.appendChild(liElem);
+    });
+}
