@@ -45,7 +45,7 @@ frutas.forEach(fruta => {
 
 //Botao para adicionar ao inicio da lista
 document.getElementById("btnAddFinal").addEventListener("click", () => {
-    let valorDigitadoCampo = document.getElementById{ "idFruta"}.value;
+    let valorDigitadoCampo = document.getElementById("idFruta").value
     fruta.push("NOVA FRUTA");
     renderizandoLista();
 });
@@ -54,16 +54,22 @@ document.getElementById("btnAddFinal").addEventListener("click", () => {
 
 //Botao para adicionar ao final da lista
 document.getElementById("btnAddFinal").addEventListener("click", () => {
-    let valorDigitadoCampo = document.getElementById{ "idFruta"}.value;
+    let valorDigitadoCampo = document.getElementById("idfruta").value;
     fruta.push("NOVA FRUTA");
     frutas.unshift[valor]
     renderizandoLista();
 });
 
 //Botao para adicionar em ordem
-
+document.getElementById("btnOrdem").addEventListener("click", () => {
+    frutas.sort();
+    renderizandoLista();
+})
 //Botao para reverso
-
+document.getElementById("btnReverso").addEventListener("click",() => {
+    frutas.reverse();
+    renderizandoLista();
+})
 function renderizandoLista() {
     lista.innerHTML = "";
     frutas.forEach(fruta => {
