@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
   <title>Otavio Miklos - RM554513</title>
 </head>
 <body>
-  <form>
-    <input id="iptName" type="text">
-    <button id="btnAdd" type="button">Adicionar</button>
-    <button id="btnSort" type="button">Ordenar</button>
-    <button id="btnRevert" type="button">Reverter</button>
-    <button id="btnDelete" type="button">Deletar</button>
-  </form>
+  <div class="container">
+    <form>
+      <input id="iptName" type="text">
+      <button id="btnAdd" type="button">Adicionar</button>
+    </form>
+    
+    <div class="buttons">
+      <button id="btnSort" type="button">Ordenar</button>
+      <button id="btnRevert" type="button">Reverter</button>
+      <button id="btnDelete" type="button">Deletar</button>
+    </div>
 
-  <ul id="listNames"></ul>
+    
+    <ul id="listNames"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
