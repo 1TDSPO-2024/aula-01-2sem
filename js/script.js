@@ -58,13 +58,35 @@ document.getElementById("btnReverse").addEventListener("click", ()=>{
     renderizaLista()
 });
 
+//Botão
+document.getElementById("btnRemover").addEventListener("click", ()=>{
+    frutas.shift()
+    renderizaLista()
+});
+
 //Renderiza lista
 function renderizaLista(){
     lista.innerHTML = "";
-    frutas.forEach( fruta => {
+    frutas.forEach( (fruta) => {
         //Criando elementos li para inserir na lista
         let elementoLi = document.createElement("li");
         elementoLi.textContent = fruta;
+
+        //Criando um botão para adicionar no li. Botão para remover o item do array
+        const btnx = document.createElement("button");
+        //Adicionar um texto ao botão
+        btnx.textContent = "X";
+        //Atrelar evento ao botão para executar a auto remoção
+        btnx.addEventListener("click", ()=>{
+            //Pesquisando o item do array e retornando o indice deste item
+            let indice = frutas.indexOf(fruta);
+            //Utilizando o splice com o indice removemos o item selecionado ao click do botão
+            frutas.splice(indice, 1);
+            renderizaLista();
+        } );
+        //Adicionando o botão ao elemento li
+        elementoLi.appendChild(btnx);
+
         lista.appendChild(elementoLi);
         });
 }
